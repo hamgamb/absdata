@@ -16,13 +16,13 @@ states <- c(
 )
 raw <- read_abs(cat_no = "6202.0", tables = c("17", "18"), retain_files = FALSE)
 
-hours_worked <- raw  |> 
-  filter(table_no == "6202019" | table_no == "6202019a") |> 
-  separate(series, 
-           into = c("indicator", "sex", "state"), 
-           sep = ";") |> 
-  mutate(across(c("indicator", "sex"), ~ trimws(gsub(">", "", .))),
-         state = ifelse(sex %in%  states, sex, "Australia"),
-         sex = ifelse(sex %in% states, "Persons", sex))
+hours_worked <- raw |>
+  filter(table_no == "62020017" | table_no == "62020018") |>
+  separate(series, into = c("indicator", "sex", "state"), sep = ";") |>
+  mutate(
+    across(c("indicator", "sex"), ~ trimws(gsub(">", "", .))),
+    state = ifelse(sex %in% states, sex, "Australia"),
+    sex = ifelse(sex %in% states, "Persons", sex)
+  )
 
 usethis::use_data(hours_worked, overwrite = TRUE)
