@@ -19,6 +19,10 @@ jobs:
         with:
           use-public-rspm: true
           r-version: renv
+      - name: Install system dependencies (if needed)
+        run: |
+          sudo apt-get update
+          sudo apt install libcurl4-openssl-dev libfontconfig1-dev libfreetype6-dev libx11-dev pandoc
       - uses: r-lib/actions/setup-renv@v2
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Update data
