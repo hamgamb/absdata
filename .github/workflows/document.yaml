@@ -3,6 +3,7 @@
 name: document-data
 
 on:
+  workflow_dispatch: 
   push:
     paths: ["R/**"]
 
