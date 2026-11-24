@@ -1,9 +1,9 @@
-Package: amwudata
-Title: Commonly Used Data for AMWU-NRC Research
+Package: absdata
+Title: Commonly Used Data for Research
 Version: 0.1.1
 Authors@R: 
-    person("Hamish", "Gamble", , "hamish.gamble@amwu.org.au", role = c("aut", "cre"))
-Description: A collection of datasets commonly used in research for the NRC at the AMWU.
+    person("Hamish", "Gamble", , "hamish.gamble@gmail.com", role = c("aut", "cre"))
+Description: A collection of datasets commonly used in research.
     Data has been tidyed and simplified for ease of use, and for easy
     integration into the reportabs package.
 License: CC0
@@ -15,3 +15,4 @@ Roxygen: list(markdown = TRUE)
 Depends: 
     R (>= 3.5)
 Config/roxygen2/version: 8.1.1
+RoxygenNote: 7.3.2
