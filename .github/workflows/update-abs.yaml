@@ -19,10 +19,6 @@ jobs:
         with:
           use-public-rspm: true
           r-version: renv
-      - name: Install system dependencies (if needed)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y r-cran-later
       - uses: r-lib/actions/setup-renv@v2
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Update data
