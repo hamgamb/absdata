@@ -5,7 +5,7 @@ name: document-data
 on:
   workflow_dispatch: 
   push:
-    paths: ["R/**"]
+    paths: ["data/**"]
 
 
 permissions: read-all
