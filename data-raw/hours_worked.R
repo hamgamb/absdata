@@ -2,6 +2,7 @@
 library(readabs)
 library(dplyr)
 library(tidyr)
+library(stringr)
 library(usethis)
 
 states <- c(
@@ -17,7 +18,7 @@ states <- c(
 raw <- read_abs(cat_no = "6202.0", tables = c("17", "18"), retain_files = FALSE)
 
 hours_worked <- raw |>
-  filter(table_no == "62020017" | table_no == "62020018") |>
+  filter(str_detect(series, "Monthly hours worked in all jobs")) |> 
   separate(series, into = c("indicator", "sex", "state"), sep = ";") |>
   mutate(
     across(c("indicator", "sex"), ~ trimws(gsub(">", "", .))),
